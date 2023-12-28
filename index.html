@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>B52 - Project Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Add Icon -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Add Font Awesome CDN -->
@@ -9,65 +10,78 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
-        /* Center align the content */
-        body {
-            text-align: center;
-        }
-
-        /* Center align the card */
-        .container {
-            margin: 25px auto;
-            padding: 50px;
-            width: 600px;
-            box-shadow: 0px 0px 20px 0px aquamarine;
-            border-radius: 5px;
-            text-align: left; 
-        }
-
-        /* Center align the social media icons */
-        .home-sci {
-            text-align: center;
-        }
-
-        /* Center align the card body */
-        .card-body {
-            text-align: center;
-        }
         .card {
-
+            margin: 20px;
+            border-radius: px;
+            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
         }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h5 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1.2em;
+            color: #100f0f;
+        }
+
     </style>
 </head>
-<body>
-    <div class="container">
-        <h3><strong>Hi, Welcome to my Personal Web</strong></h3>
-        <h5 style="text-align: justify;">Hi, I'm Andre , a detail-oriented Fullstack Developer passionate about crafting seamless and visually captivating websites. 
-            Let's collaborate to turn your ideas into engaging digital experiences that leave a lasting impression..</h5> <br>
-        <div class="row">    
-            <a href="#" class="btn btn-dark rounded-pill mb-3" style="width: 20%;">Contact</a>
-            <!-- Download icon -->
-            <a href="#" style="text-decoration: none; color: black;">
-                download cv <i class="bi bi-download" style="font-size: 1em;"></i> <br><br>
-            </a>            
+<body class="body">
+    <nav class="nav">
+        <img src="assets/img/logo.jpg" alt="logo" class="logo">
+        <a href="index.html" class="nav-link active" style="font-weight: bold;">Home</a>
+        <a href="project.html" class="nav-link">My Project</a>
+        <div class="menu">            
+            <a href="contact.html" class="btn-contact btn btn-dark">Contact me</a>
         </div>
-        <div class="home-sci">
-            <a href="#" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-github"></i></a>
-            <a href="#" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-linkedin"></i></a>
-            <a href="#" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-instagram"></i></a>
-            <a href="#" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-facebook"></i></a>
-            <a href="#" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-twitter"></i></a>
-        </div>
-        
-        <div class="card" style="width: 60%; height: 320px; margin: 0 auto; text-align: center;">
-            <img src="assets/img/meow.jpg" class="card-img-top" alt="personal-image.jpg" style="width: 100%; height: 240px; object-fit: cover; margin-bottom: -20px;">
-            <div class="card-body" style="padding: 10px;">
-                <h5 class="card-title"><strong>Andre Setiawan</strong></h5>
-                <p>Fullstack Developer</p>
+    </nav>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="row g-0">
+                <!-- Left Section (Column) -->
+                <div class="col-md-8">
+                    <div class="card-body mt-5">
+                        <h3 class="card-title"><strong>Hi, Welcome to my Personal Web</strong></h3>
+                        <p class="card-text" style="text-align: justify;">Hello, I'm Andre, a detail-oriented Fullstack Developer 
+                            with a passion for crafting seamless and visually captivating websites. I bring a high level of
+                            dedication to technology and programming artistry, combining strong front-end and back-end development skills.
+                            My goal is to collaborate with you to transform your ideas into engaging digital experiences. With a focus on 
+                            creativity and user-centric design, I strive to deliver not only functional but aesthetically pleasing interfaces. Let's work together to create innovative solutions 
+                            and elevate your digital presence. Feel free to reach out for further discussion or inquiries.</p>
+                        <div>
+                            <a href="#" class="btn btn-dark rounded-pill mb-3" style="width: 20%;">Contact</a>
+                            <a href="#" style="text-decoration: none; color: black;">
+                                download cv <i class="bi bi-download" style="font-size: 1em;"></i> <br><br>
+                            </a>
+                        </div>
+                        <div class="home-icon">
+                            <a href="https://github.com/AndreSw01/b52-personal-web" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-github"></i></a>
+                            <a href="https://www.linkedin.com/" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://www.instagram.com" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://web.facebook.com/" style="font-size: 2em; color: black; margin-right: 10px;"><i class="bx bxl-facebook"></i></a>                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Section (Column) -->
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <div class="card" style="text-align: center;">
+                            <img src="assets/img/meow.jpg" class="card-img-top" alt="personal-image.jpg" style="width: 100%; height: 250px;">
+                            <h5><strong>Andre Setiawan</strong></h5>
+                            <p>Fullstack Developer</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-             
     </div>
 </body>
 </html>
