@@ -1,17 +1,22 @@
 .body {
   margin: 0px;
-  padding: 0px 0px 0px;
+  padding: 0;
   font-family: Arial, sans-serif;
   background-color: rgb(227,231,235);
 }
 
 .nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 0px 0px 0px;
   background-color: #F4F3F3;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  z-index: 1000;
 }
 
 .logo {
@@ -34,7 +39,7 @@
 .nav-link {
   color: black;
   text-decoration: none;
-  padding: 15px;
+  padding: 15px 0;
   display: block;
   font-weight: bold; /* Add this line to make the text bold */
 }
@@ -83,5 +88,60 @@
   .card {
     text-align: center;
   }
+
+  /** style contact **/
+  
+.forms{
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.h4 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 8px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+select {
+  height: 38px; /* Match the height of input elements */
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
 }
  
