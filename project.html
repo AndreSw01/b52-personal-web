@@ -2,51 +2,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Add Icon -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Add Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oS3vJWskMzL3UomHpC5L5S/Z9vI4AwaD5V3hN4rRsZZ8hmmVT+6Z3uEC0f5gHbX5" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
-        .card {
-            margin: 20px;
-            border-radius: px;
-            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease-in-out;
+        .form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 5px;
         }
 
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        h4 {
+            text-align: center;
+            font-weight: bold;
         }
 
-        .card h5 {
-            font-size: 1.5em;
+        label {
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
             margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        .card p {
-            font-size: 1.2em;
-            color: #100f0f;
+        .button {
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            text-align: right;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .card {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body class="body">
-    <nav class="nav">
-        <img src="assets/img/logo.jpg" alt="logo" class="logo">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="project.html" class="nav-link active" style="font-weight: bold;">My Project</a>
-        <div class="menu">            
-            <a href="contact.html" class="btn-contact btn btn-dark">Contact me</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.jpg" width="60" style="margin:0 20px 0;" alt="Logo">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="project.html">My Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="testimonials.html">Testimonials</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-dark"  style="color: #fefefe; margin-right:auto;" href="contact.html">Contact me</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="card">
-                <h3>ini halaman project</h3>
-        </div>
+    
+    <div class="container mt-5" style="width: 100%; max-width: 1000px;">
+        <form class="form" method="post" action="#" id="projectForm">
+            <h4>Add My Project</h4>
+            <div>
+                <label for="projectname">Project Name</label>
+                <input type="text" id="projectname" name="projectname" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="datestart">Start Date</label>
+                    <input type="date" id="datestart" name="datestart" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="dateend">End Date</label>
+                    <input type="date" id="dateend" name="dateend" required>
+                </div>
+            </div>            
+            <div>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" required>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+            </div>        
+            <div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-check-input" name="technology" type="checkbox" value="Node.Js" id="node">
+                        <label class="form-check-label" for="node">
+                            Node Js
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-check-input" name="technology" type="checkbox" value="Python" id="python">
+                        <label class="form-check-label" for="python">
+                            Python
+                        </label>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="col-md-6">
+                        <input class="form-check-input" name="technology" type="checkbox" value="React.Js" id="react">
+                        <label class="form-check-label" for="react">
+                            React Js
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-check-input" name="technology" type="checkbox" value="Typescript" id="typescript">
+                        <label class="form-check-label" for="typescript">
+                            Typescript
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="upload">Upload Image</label>
+                    <div class="input-group">
+                        <input type="file" id="upload" name="upload" class="form-control">
+                        <div class="input-group-append">
+                            <span class="input-group-text" style="font-size: 1.50rem;"><i class="bx bx-paperclip"></i></span>
+                        </div>
+                    </div>
+                </div>
+                            
+            </div>
+            <div class="button">
+                <button class="btn btn-dark rounded-pill mb-3" id="submitButton" style="width: 100px;" type="button" onclick="Submit(event)">Submit</button>
+            </div>
+        </form>
+        <!-- Output Content -->
+        <div id="outputContent" class="row"></div>
     </div>
+   
+    <script src="assets/js/project.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

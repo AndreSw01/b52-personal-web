@@ -6,17 +6,17 @@
 }
 
 .nav {
-  position: fixed;
+  /* position: fixed;
   top: 0;
   width: 100%;
-  padding: 0px 0px 0px;
+  padding: 0px 0px 20px; */
   background-color: #F4F3F3;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  z-index: 1000;
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.3); */
+ 
 }
 
 .logo {
@@ -29,6 +29,9 @@
   width: auto;
   margin-right: 30px;
   padding: 10px 20px 30px; 
+}
+.container {
+  margin-top: 80px; /* Sesuaikan nilai ini dengan tinggi navbar */
 }
 
 .menu {
@@ -93,7 +96,7 @@
   
 .forms{
   background: #ffffff;
-  padding: 20px;
+  padding: 100px;
   margin-top: 50px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

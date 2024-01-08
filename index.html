@@ -2,45 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Add Icon -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Add Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oS3vJWskMzL3UomHpC5L5S/Z9vI4AwaD5V3hN4rRsZZ8hmmVT+6Z3uEC0f5gHbX5" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .card {
-            margin: 20px;
-            border-radius: px;
-            box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease-in-out;
-        }
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
 
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        .card h5 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 1.2em;
-            color: #100f0f;
-        }
-
-    </style>
 </head>
 <body class="body">
-    <nav class="nav">
-        <img src="assets/img/logo.jpg" alt="logo" class="logo">
-        <a href="index.html" class="nav-link active" style="font-weight: bold;">Home</a>
-        <a href="project.html" class="nav-link">My Project</a>
-        <div class="menu">            
-            <a href="contact.html" class="btn-contact btn btn-dark">Contact me</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.jpg" width="60" style="margin:0 20px 0;" alt="Logo">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="project.html">My Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="testimonials.html">Testimonials</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-dark"  style="color: #fefefe; margin-right:auto;" href="contact.html">Contact me</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <div class="container mt-5">
@@ -83,5 +87,9 @@
             </div>
         </div>
     </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
