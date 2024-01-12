@@ -1,146 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<!-- Menambahkan Icon -->
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<!-- Menambahkan Font Awesome CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oS3vJWskMzL3UomHpC5L5S/Z9vI4AwaD5V3hN4rRsZZ8hmmVT+6Z3uEC0f5gHbX5" crossorigin="anonymous" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Add Icon -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <!-- Add Font Awesome CDN -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
-    
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+	</head>
+	<body class="body">
+		<!-- Memanggil navbar -->
+		<nav id="navbar-container"></nav>
 
-    <style>
-        .btn-orange {
-            background-color: orange;
-        }
+		<div class="container mt-5">
+			<h4 class="page-header text-center">Testimonials</h4>
+			<h6 class="text-center mt-3">Penilaian Berdasarkan Bintang</h6>
+			<!-- Elemen Penilaian Berdasarkan Bintang -->
+			<div class="row col-md-6 text-center mx-auto mt-3 text-decoration-none mt-2">
+				<div class="col-md-2 mb-2">
+					<a href="#" class="btn btn-warning text-dark d-block py-2" onclick="filterTestimonials('all')"> <i class="bi bi-star"></i> Semua </a>
+				</div>
+				<div class="col-md-2 mb-2">
+					<a href="#" class="btn btn-warning text-dark d-block py-2" onclick="filterTestimonials('1')"> <i class="bi bi-star"></i> 1 </a>
+				</div>
+				<div class="col-md-2 mb-2">
+					<a href="#" class="btn btn-warning text-dark d-block py-2" onclick="filterTestimonials('2')"> <i class="bi bi-star"></i> 2 </a>
+				</div>
+				<div class="col-md-2 mb-2">
+					<a href="#" class="btn btn-warning text-dark d-block py-2" onclick="filterTestimonials('3')"> <i class="bi bi-star"></i> 3 </a>
+				</div>
+				<div class="col-md-2 mb-2">
+					<a href="#" class="btn btn-warning text-dark d-block py-2" onclick="filterTestimonials('4')"> <i class="bi bi-star"></i> 4 </a>
+				</div>
+				<div class="col-md-2 mb-2">
+					<a href="#" class="btn btn-warning text-dark d-block py-2" onclick="filterTestimonials('5')"> <i class="bi bi-star"></i> 5 </a>
+				</div>
+			</div>
 
-        .testimonials .card {
-            height: 100%;
-            margin-bottom: 20px;
-            /* Tambahkan jarak margin bawah antara setiap kartu */
-        }
+			<!-- Elemen Testimonials -->
+			<div class="testimonials row mt-3 text-center"></div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+		<!-- Memuat navbar setelah Bootstrap dimuat -->
+		<script>
+			$(document).ready(function () {
+				$('#navbar-container').load('navbar.html')
+			})
+		</script>
+		<script>
+			// Data contoh (gantilah ini dengan data sesungguhnya)
+			const testimonialsData = [
+				{
+					name: 'Enstein',
+					image: 'assets/img/albert-einstein-1933340_1280.jpg',
+					description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+					rating: 4,
+				},
+				{
+					name: 'Jane Smith',
+					image: 'assets/img/mountains-55067_1280.webp',
+					description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+					rating: 4,
+				},
+				{
+					name: 'Bob Johnson',
+					image: 'assets/img/ocean-1867285_1280.jpg',
+					description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+					rating: 5,
+				},
+				{
+					name: 'Andrew',
+					image: 'assets/img/meow.jpg',
+					description: 'Vivamus at arcu eu justo luctus aliquet. Integer non magna nec justo varius dictum.',
+					rating: 5,
+				},
+				{
+					name: 'Alice Doe',
+					image: 'assets/img/road-220058_1280.jpg',
+					description: 'Vivamus at arcu eu justo luctus aliquet. Integer non magna nec justo varius dictum.',
+					rating: 3,
+				},
+				{
+					name: 'Allan',
+					image: 'assets/img/meow.jpg',
+					description: 'Vivamus at arcu eu justo luctus aliquet. Integer non magna nec justo varius dictum.',
+					rating: 1,
+				},
+				{
+					name: 'Obama',
+					image: 'assets/img/obama-356133_1280.jpg',
+					description: 'Aenean ultricies turpis vitae dui malesuada, vel eleifend odio suscipit. Praesent euismod odio vel odio tincidunt, vel pellentesque nunc fermentum.',
+					rating: 2,
+				},
+			]
 
-        .testimonials img {
-            object-fit: cover;
-            height: 200px;
-            /* Sesuaikan tinggi gambar sesuai kebutuhan */
-        }
+			function filterTestimonials(rating) {
+				const testimonialsContainer = document.querySelector('.testimonials')
 
-        .rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 10px;
-        }
+				testimonialsContainer.innerHTML = ''
 
-        .rating i {
-            color: gold;
-        }
-    </style>
+				const numericRating = rating === 'all' ? 'all' : parseInt(rating, 10)
 
-</head>
+				const filteredTestimonials = numericRating === 'all' ? testimonialsData : testimonialsData.filter((testimonial) => testimonial.rating === numericRating)
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="assets/img/logo.jpg" width="60" style="margin:0 20px 0;" alt="Logo">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="project.html">My Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="testimonials.html">Testimonials</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link btn btn-dark" style="color: #fefefe; margin-right:auto;" href="contact.html">Contact me</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container mt-5">
-        <h1 class="page-header text-center">Testimonials</h1>
-        <h5 class="text-center mt-3">Rating By Star</h5>
-        <!-- Elemen Rating By Star -->
-        <div class="row col-md-6 text-center mx-auto mt-3 text-decoration-none mt-2">
-            <div class="col-md-2">
-                <a href="#" class="btn btn-orange text-dark" onclick="filterTestimonials('all')"><i class="fas fa-star"></i> All</a>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="btn btn-orange text-dark" onclick="filterTestimonials('1')"><i class="fas fa-star"></i> 1</a>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="btn btn-orange text-dark" onclick="filterTestimonials('2')"><i class="fas fa-star"></i> 2</a>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="btn btn-orange text-dark" onclick="filterTestimonials('3')"><i class="fas fa-star"></i> 3</a>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="btn btn-orange text-dark" onclick="filterTestimonials('4')"><i class="fas fa-star"></i> 4</a>
-            </div>
-            <div class="col-md-2">
-                <a href="#" class="btn btn-orange text-dark" onclick="filterTestimonials('5')"><i class="fas fa-star"></i> 5</a>
-            </div>
-        </div>        
-
-        <!-- Elemen Testimonials -->
-        <div class="testimonials row mt-3 text-center"></div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-    <script>
-        // Sample data (replace this with your actual data)
-        const testimonialsData = [
-            { name: "Enstein", image: "assets/img/albert-einstein-1933340_1280.jpg", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", rating: 4 },
-            { name: "Jane Smith", image: "assets/img/mountains-55067_1280.webp", description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", rating: 4 },
-            { name: "Bob Johnson", image: "assets/img/ocean-1867285_1280.jpg", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", rating: 5 },
-            { name: "Andrew", image: "assets/img/meow.jpg", description: "Vivamus at arcu eu justo luctus aliquet. Integer non magna nec justo varius dictum.", rating: 5 },
-            { name: "Alice Doe", image: "assets/img/road-220058_1280.jpg", description: "Vivamus at arcu eu justo luctus aliquet. Integer non magna nec justo varius dictum.", rating: 3 },
-            { name: "Allan", image: "assets/img/meow.jpg", description: "Vivamus at arcu eu justo luctus aliquet. Integer non magna nec justo varius dictum.", rating: 1 },
-            { name: "Obama", image: "assets/img/obama-356133_1280.jpg", description: "Aenean ultricies turpis vitae dui malesuada, vel eleifend odio suscipit. Praesent euismod odio vel odio tincidunt, vel pellentesque nunc fermentum.", rating: 2 }
-        ]; 
-
-        // Function to filter and display testimonials
-        // Function to filter and display testimonials
-        function filterTestimonials(rating) {
-            const testimonialsContainer = document.querySelector('.testimonials');
-
-            // Clear existing testimonials
-            testimonialsContainer.innerHTML = '';
-
-            // Convert the rating to a number for comparison
-            const numericRating = (rating === 'all') ? 'all' : parseInt(rating, 10);
-
-            // Filter testimonials based on rating
-            const filteredTestimonials = (numericRating === 'all') ? testimonialsData : testimonialsData.filter(testimonial => testimonial.rating === numericRating);
-
-            // Display each testimonial
-            filteredTestimonials.forEach(testimonial => {
-                const testimonialHtml = `
+				filteredTestimonials.forEach((testimonial) => {
+					const testimonialHtml = `
                     <div class="col-md-4 testimonial mb-2" data-rating="${testimonial.rating}">
-                        <div class="card">
-                            <img src="${testimonial.image}" class="card-img-top" alt="${testimonial.name}">
+                        <div class="card shadow">
+                            <div style="overflow: hidden;">
+                                <img src="${testimonial.image}" class="card-img-top" alt="${testimonial.name}" style="object-fit: cover; height: 200px;">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">${testimonial.name}</h5>
                                 <p class="card-text">${testimonial.description}</p>
@@ -151,17 +125,12 @@
                             </div>
                         </div>
                     </div>
-                `;
+                `
+					testimonialsContainer.innerHTML += testimonialHtml
+				})
+			}
 
-                testimonialsContainer.innerHTML += testimonialHtml;
-            });
-        }
-
-
-        // Initial display (show all testimonials)
-        filterTestimonials('all');
-    </script>
-    
-</body>
-
+			filterTestimonials('all')
+		</script>
+	</body>
 </html>

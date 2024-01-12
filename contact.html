@@ -1,133 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Add Icon -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <!-- Add Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <style>
-        .form {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        h4 {
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .row {
-            flex-direction: column;
-            text-align: start;
-            margin-bottom: 15px;
-        }
-
-        label {
-            margin-bottom: 5px;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .button {
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            text-align: right;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-    </style>
-</head>
-<body class="body">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="assets/img/logo.jpg" width="60" style="margin:0 20px 0;" alt="Logo">
-        </a>
-    
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="project.html">My Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="testimonials.html">Testimonials</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link btn btn-dark active"  style="color: #fefefe; margin-right:auto;" href="contact.html">Contact me</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container mt-5" style="width: 60% ; max-width: 600px;">
-        <div class="form" method="post" action="" id="contactForm">
-            <h4>Get In Touch</h4>
-            <div class="row">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="row">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="row">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="row">
-                <label for="subject">Subject</label>
-                <select id="subject" name="subject" required>
-                    <option value="Frontend Developer">Frontend Developer</option>
-                    <option value="Backend Developer">Backend Developer</option>
-                    <option value="Fullstack Developer">Fullstack Developer</option>
-                </select>
-            </div>
-            <div class="row">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <div class="button">
-                <button class="btn btn-dark rounded-pill mb-3" style="width: 100px;" type="button" onclick="sendEmail()">Submit</button>
-            </div>
-        </div>
-            <script src="assets/js/mail.js"></script>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<!-- Add Icon -->
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<!-- Add Font Awesome CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oS3vJWskMzL3UomHpC5L5S/Z9vI4AwaD5V3hN4rRsZZ8hmmVT+6Z3uEC0f5gHbX5" crossorigin="anonymous" />
+		<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+		<!-- Hapus Bootstrap 4.5.2 -->
+		<!-- Hapus Bootstrap 5.0.2 karena sudah dimuat di bawah -->
+		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+		<style>
+			.form-container {
+				width: 60%;
+				max-width: 600px;
+			}
+			.form {
+				background-color: #f5f7fa;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.row {
+				margin: 5px;
+				padding: 15px;
+			}
+			.button {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body class="body">
+		<!-- Memanggil navbar -->
+		<nav id="navbar-container"></nav>
+		<div class="container mt-3 mx-auto" style="width: 90%; max-width: 1000px">
+			<div class="form col-md-6 mx-auto" method="post" action="" id="contactForm">
+				<h4 class="text-center">Get In Touch</h4>
+				<div class="row">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" id="name" name="name" required />
+				</div>
+				<div class="row">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" id="email" name="email" required />
+				</div>
+				<div class="row">
+					<label for="phone">Phone Number</label>
+					<input type="tel" class="form-control" id="phone" name="phone" required />
+				</div>
+				<div class="row">
+					<label for="subject">Subject</label>
+					<select class="form-control" id="subject" name="subject" required>
+						<option value="Frontend Developer">Frontend Developer</option>
+						<option value="Backend Developer">Backend Developer</option>
+						<option value="Fullstack Developer">Fullstack Developer</option>
+					</select>
+				</div>
+				<div class="row">
+					<label for="message">Your Message</label>
+					<textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+				</div>
+				<div class="button">
+					<button class="btn btn-dark rounded-pill mb-3" style="width: 100px" type="button" onclick="sendEmail()">Submit</button>
+				</div>
+			</div>
+			<script src="assets/js/mail.js"></script>
+		</div>
+		<!-- Function panggil navbar -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+		<!-- Load navbar setelah Bootstrap dimuat -->
+		<script>
+			$(document).ready(function () {
+				$('#navbar-container').load('navbar.html')
+			})
+		</script>
+	</body>
 </html>
