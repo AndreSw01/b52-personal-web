@@ -93,10 +93,98 @@
 			<div id="outputContent" class="row"></div>
 		</div>
 
+		<!-- Include this script tag in your project.html file -->
+		<script>
+			// Function to fetch and display projects
+			function displayProjects() {
+				const outputContent = document.getElementById('outputContent')
+				outputContent.innerHTML = '' // Clear previous content
+
+				// Fetch data from npoint.io
+				fetch('https://api.npoint.io/e1650423d649734d4f8a') // Replace 'your-endpoint' with your actual endpoint
+					.then((response) => response.json())
+					.then((projects) => {
+						// Add h4 element outside the loop
+						const h4Element = document.createElement('h4')
+						h4Element.className = 'text-center'
+						h4Element.textContent = 'My Projects'
+						outputContent.appendChild(h4Element)
+
+						// Create a card container div
+						let cardContainer = document.createElement('div')
+						cardContainer.className = 'row row-cols-1 row-cols-md-3 mb-4'
+
+						// Create a card for each project
+						projects.forEach((project, index) => {
+							// Convert selected technologies to icons
+							const technologyIcons = project.technologies
+								.map((tech) => {
+									switch (tech) {
+										case 'Node.Js':
+											return '<i class="bx bxl-nodejs"></i>'
+										case 'Python':
+											return '<i class="bx bxl-python"></i>'
+										case 'React.Js':
+											return '<i class="bx bxl-react"></i>'
+										case 'Typescript':
+											return '<i class="bx bxl-typescript"></i>'
+										// Add more cases for other technologies as needed
+										default:
+											return '' // Handle unknown technologies or add a default icon
+									}
+								})
+								.join('')
+
+							// Create a card element
+							const card = document.createElement('div')
+							card.className = 'col-md-4'
+							card.id = `project${index + 1}` // Set id attribute with a unique identifier
+							card.innerHTML = `
+							<div class="card h-100 shadow">
+    <div card>
+        <img src="${project.imageLink}" alt="Project Image" class="card-img-top" style="object-fit: cover; height: 200px;"> 
+    </div>
+    <div class="card-body">
+        <h5 class="card-title mb-2">${project.projectName}</h5>
+        <small class="text-muted">Duration: ${project.duration}</small>
+        <p class="card-text">${project.description}</p>
+    </div>
+    <div class="card-footer bg-transparent border-top">
+        <div class=" row mt-2">
+            <div class="d-flex">
+                <a href="#" style="font-size: 2em; color: black; margin-right: 10px; text-decoration: none;">
+                    ${technologyIcons}
+                </a>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <a href="detailproject.html?projectId=${index + 1}" class="btn btn-dark btn-sm mr-2"><b>Detail</b></a>
+            <a href="deleteproject.html?projectId=${index + 1}" class="btn btn-danger btn-sm"><b>Delete</b></a>
+        </div>
+    </div>
+</div>
+
+		  `
+
+							// Add the card to the card container
+							cardContainer.appendChild(card)
+						})
+
+						// Append the card container to the output content
+						outputContent.appendChild(cardContainer)
+					})
+					.catch((error) => console.error('Error fetching data:', error))
+			}
+
+			// Call the function to display projects
+			displayProjects()
+		</script>
+
 		<!-- Function panggil navbar -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+
 		<!-- Load navbar setelah Bootstrap dimuat -->
 		<script>
 			$(document).ready(function () {
@@ -104,6 +192,6 @@
 			})
 		</script>
 
-		<script src="assets/js/project.js"></script>
+		<!-- <script src="assets/js/project.js"></script> -->
 	</body>
 </html>
